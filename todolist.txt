@@ -1,0 +1,13 @@
+#TODO:
+1.	Organize existing contents in proper folder structure.
+2.	Commit on GitHub - Should have done yesterday.
+3.	Identify static elements on the page.
+    a. Titles, common text elements
+    b. Put them in the HTML elements on the index.html
+    c. Do not include any form elements on the page.
+    d. App.js should be the main script file. 
+    e. Start with defining objects for dynamic elements on the first page. 
+        i. First question and options can be stored in a array of objects.
+        ii. Load them to the strcuture on page load by defining the script inside document.ready() function.
+    
+

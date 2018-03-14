@@ -1,0 +1,149 @@
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+.container {
+  text-align: center;
+  width: 80%;
+  height: auto;
+  margin: 7% 10% 0 10%;
+  display: block;
+}
+
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-color: #222930;
+}
+
+.title {
+  margin-top: 0;
+  padding: 3% 0 3% 0;
+  font-weight: lighter;
+  color: #E9E9E9;
+}
+
+.question {
+  font-size: 25px;
+  padding: 2% 0 0 0;
+}
+
+.options {
+  font-size: 20px;
+  margin: 4% 0 6% 0;
+}
+
+.buttons {
+  margin: 5% 0 5% 0;
+}
+
+.nextButton {
+  font-size: 20px;
+}
+
+label {
+  margin: 0 2% 0 0;
+}
+
+.questionBox {
+  border: solid 10px;
+  border-radius: 15px;
+  background-color: #E9E9E9;
+  border-color: #4EB1BA;
+
+
+
+}
+
+#option1,
+#option2,
+#option3 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 13.33333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  transition: all 0.15s ease-out 0s;
+  background: white;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+  border-radius: 50%;
+}
+
+/* .option-input:hover {
+    background: #9faab7;
+  } */
+
+#option1:checked,
+#option2:checked,
+#option3:checked {
+  background: #40e0d0;
+}
+
+#option1:checked::before,
+#option2:checked::before,
+#option3:checked::before {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  content: "✔";
+  display: inline-block;
+  font-size: 26.66667px;
+  text-align: center;
+  line-height: 40px;
+}
+
+#option1:checked::after,
+#option2:checked::after,
+#option3:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #40e0d0;
+  content: "";
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+
+.nextButton {
+  background-color: #4EB1BA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.nextButton:hover {
+  background-color:  #398b93
+  ;
+}
