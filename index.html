@@ -7,46 +7,62 @@
     <title>Super Hero</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/styles.css" />
-    <script src="scripts/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
-<div class="container">
-
-    <div class="titleBox">
-
-        <h1 class="title">
-            Which super hero are you??
-        </h1>
-
-    </div>
-
-    <div class="questionBox">
-
-        <div class="question">
-            <p>What is the sample question?</p>
-        </div>
-
-        <div class="options">
-           
-                <input id="option1" type="radio" name="option" value="one" checked>
-                <label for="option1">one</label>
-
-                <input id="option2" type="radio" name="option" value="two">
-                <label for="option2">two</label>
-
-                <input id="option3" type="radio" name="option" value="three">
-                <label for="option3">three</label>
-            
-        </div>
-
-    </div>
-
-    <div class="buttons">
-        <button class="nextButton" type="submit">Next</button>
-    </div>
-
-</div>
 
 <body>
+
+    <div class="container">
+
+        <div class="titleBox">
+
+            <img src="images/logo3.png" width=700 height=80>
+            <!-- <h1 class="title">
+                Which super hero are you??
+            </h1> -->
+
+        </div>
+
+        <div class="questionBox">
+
+            <div class="question">
+                <p id="questionText">What is the sample question?</p>
+            </div>
+
+            <div class="options">
+
+                <div>
+                    <input id="option1" type="radio" name="option" value="one">
+                    <label id="option1Text" for="option1">one</label>
+                </div>
+
+                <div>
+
+                    <input id="option2" type="radio" name="option" value="two">
+                    <label id="option2Text" for="option2">two</label>
+                </div>
+
+
+                <div>
+
+                    <input id="option3" type="radio" name="option" value="three">
+                    <label id="option3Text" for="option3">three</label>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="buttons">
+            <button class="nextButton" type="submit">Next</button>
+        </div>
+
+    </div>
+
+    <script src="scripts/app.js"></script>
+
 
 </body>
 
