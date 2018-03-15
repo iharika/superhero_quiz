@@ -11,3 +11,10 @@
         ii. Load them to the strcuture on page load by defining the script inside document.ready() function.
     
 
+
+
+#Features
+1. Option to navigate back and forth the questions (to change the answers)
+2. Create event listener on radio button, and enable next button on checked.
+3. Upon reaching last question, the next button should be changed to Finish and should be disabled on clicking Finish.
+
