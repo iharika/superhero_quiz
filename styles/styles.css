@@ -70,6 +70,7 @@ body {
   /* padding: 0 0 40px 0; */
   width: 80%;
   margin: 0 10% 0 10%;
+  font-size: 1.5em;
 }
 
 #option1,
@@ -158,3 +159,7 @@ body {
   border: none;
   background-color: #d0e1e2;
 } */
+
+.hideContent {
+  display: none;
+}

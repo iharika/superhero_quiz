@@ -9,8 +9,8 @@ const questionsList = [
     questionText: "Pick a word set that describes you well",
     optionList: [
       "Strongest and protective",
-      "Intellectual and sarcastic",
-      "Tough and Serious"
+      "Tough and Serious",
+      "Intellectual and sarcastic"
     ]
   },
 
@@ -31,7 +31,7 @@ const questionsList = [
   }
 ];
 
-let questionCounter = 0;
+let questionCounter;
 let chosenOptions = [];
 const totalQuestions = questionsList.length - 1;
 
@@ -45,40 +45,33 @@ function loadQuestion(qnumber) {
   document.querySelector("#option3Text").textContent =
     questionsList[qnumber].optionList[2];
 
-  if (totalQuestions === qnumber) {
+  if (qnumber === totalQuestions) {
     document.querySelector(".nextButton").textContent = "Finish the game";
   }
 }
 
 document.querySelector(".nextButton").addEventListener("click", function() {
   if (document.querySelector(".nextButton").textContent === "Play again!") {
-    alert("YAyy Playing again");
-    playQuiz();
-  }
-
-  if (document.querySelector("input[name=option]:checked") != null) {
-
-    if (questionCounter === totalQuestions) {
-      //last question process
-      chosenOptions.push(findSelectedOption());
-      showResult();
-      document.querySelector(".nextButton").textContent = "Play again!";
-    } 
-    
-    else {
-      questionCounter++;
-      chosenOptions.push(findSelectedOption());
-      console.log(chosenOptions);
-      loadQuestion(questionCounter);
-      resetOptions();
+    alert("Yayy Playing again");
+    location.reload();
+  } else {
+    if (document.querySelector("input[name=option]:checked") != null) {
+      if (questionCounter === totalQuestions) {
+        //last question process
+        chosenOptions.push(findSelectedOption());
+        showResult();
+        document.querySelector(".nextButton").textContent = "Play again!";
+      } else {
+        questionCounter++;
+        chosenOptions.push(findSelectedOption());
+        console.log(chosenOptions);
+        loadQuestion(questionCounter);
+        resetOptions();
+      }
+    } else {
+      alert("Please select your answer");
     }
-
-  } 
-  
-  else {
-    alert("Please select an option");
   }
-
 });
 
 function findSelectedOption() {
@@ -100,18 +93,44 @@ function playQuiz() {
 }
 
 function showResult() {
-  document.querySelector('.questionBox').childNodes.style.display = 'none';
-    document.querySelector('.questionBox').textContent = `
-  You have selected these options
-
-   ${chosenOptions}
-   
-   `;
-
+  let Hero = result();
+  document.querySelector(".question").classList.add("hideContent");
+  document.querySelector(".options").classList.add("hideContent");
+  document.querySelector(".questionBox").innerText = `
+  Woohoo!!! 
+  
+  You are "${Hero}"
+    
+  You are ${chosenOptions[0]}
+  Your strength is ${chosenOptions[1]}
+  You'd like to use ${chosenOptions[2]} as your weapon(s).
+  
+  `;
 }
 
+function result() {
+  let superHero = "One Of A Kind! Our New SuperHero";
+  if (
+    chosenOptions[0] === questionsList[1].optionList[0] &&
+    chosenOptions[1] === questionsList[2].optionList[0] &&
+    chosenOptions[2] === questionsList[3].optionList[0]
+  ) {
+    superHero = "SUPER MAN";
+  } else if (
+    chosenOptions[0] === questionsList[1].optionList[1] &&
+    chosenOptions[1] === questionsList[2].optionList[1] &&
+    chosenOptions[2] === questionsList[3].optionList[1]
+  ) {
+    superHero = "THOR";
+  } else if (
+    chosenOptions[0] === questionsList[1].optionList[2] &&
+    chosenOptions[1] === questionsList[2].optionList[2] &&
+    chosenOptions[2] === questionsList[3].optionList[2]
+  ) {
+    superHero = "IRON MAN";
+  }
 
+  return superHero;
+}
 
 $(document).ready(playQuiz());
-
-

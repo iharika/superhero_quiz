@@ -18,3 +18,7 @@
 2. Create event listener on radio button, and enable next button on checked.
 3. Upon reaching last question, the next button should be changed to Finish and should be disabled on clicking Finish.
 
+
+
+H
+play again functionality needs to be done
