@@ -109,7 +109,8 @@ function showResult() {
 }
 
 function result() {
-  let superHero = "One Of A Kind! Our New SuperHero";
+  let superHeroes = ['The Multiple Ninja','Hydro Hex','The Ultra Barbarian','The Sensational Scream','Super Flame'];
+  let superHero = superHeroes[Math.floor(Math.random() * superHeroes.length)];
   if (
     chosenOptions[0] === questionsList[1].optionList[0] &&
     chosenOptions[1] === questionsList[2].optionList[0] &&
